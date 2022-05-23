@@ -40,4 +40,14 @@
 
     // 一秒ごとに clock 関数を呼び出す
     setInterval(clock, 1000);
+
+    const body = document.querySelector('body');
+    const button = document.querySelector('button');
+    
+    button.addEventListener('click', () => {
+        body.classList.toggle("blue_color");
+        body.classList.toggle("black_color");
+        button.classList.toggle("blue_color");
+        button.classList.toggle("black_color");
+    });
 }
