@@ -3,7 +3,8 @@ body {
     padding: 0;
     font-family: 'ヒラギノ明朝 ProN', 'Hiragino Mincho ProN', 'ヒラギノ明朝 Pro', 'Hiragino Mincho Pro', 'Yu Mincho', '游明朝', verdana, sans-serif;
     color: #fff;
-    background: #fff;
+    background: #000;
+
 }
 
 ul {
@@ -36,9 +37,9 @@ header {
     height: 100%;
 }
 
-/* .sp-menu {
+.sp-menu {
     margin-left: auto;
-} */
+}
 
 .sp-menu #open {
     font-size: 32px;
