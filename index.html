@@ -5,34 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project for ST</title>
-    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- icon -->
     <link rel="icon" href="img/icon/symbol.ico">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/black_clock.css">
 </head>
 <body>
-    <header>
-        <a href="#">
-            <img src="img/logo/logo2_black_l.png" alt="logo">
-        </a>
-        <ul>
-            <li><a href="black_clock.html">black</a></li>
-            <li>nav2</li>
-            <li>nav3</li>
-        </ul>
-    </header>
+    <div class="header-box">
+
+        <header>
+            <a href="#">
+                <img class="st-logo" src="img/logo/logo2_black_l.png" alt="logo">
+            </a>
+    
+            <div class="pc-menu">
+                <nav>
+                    <ul>
+                        <li><a href="black_clock.html">black</a></li>
+                        <li><a href="black_clock.html">black</a></li>
+                        <li><a href="black_clock.html" target="_blank">blank</a></li>
+                    </ul>
+                </nav>
+            </div>
+    
+            <div class="sp-menu">
+                <span class="material-icons" id="open">menu</span>
+            </div>
+        </header>
+
+        <div class="overlay">
+            <span class="material-icons" id="close">close</span>
+            <nav>
+                <ul>
+                    <li><a href="black_clock.html">black</a></li>
+                    <li><a href="black_clock.html">black</a></li>
+                    <li><a href="black_clock.html" target="_blank">blank</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
     <main>
         <article>
             <div class="contents">
                 <h2 class="contents-title">ST NEWS（隔週配信予定</h2>
                 <div class="content-box">
-                    <div class="text-box">
-                        <h3 class="small-title">ST外部向けサイト開設（2022/05/13）</h3>
-                        <p>現状コンテンツが全くと言っていいほどないが、一応サイト自体の作成を開始し、運び屋のgitにも掲載し始めたということで記録。<br>
-                        STのロゴもとりあえずではあるが作成した（ほんとに適当だけど）   
-                        </p>
-                    </div>
-                    <div class="img-box">
-                        <img src="img/logo/logo1_black_l.png" alt="logo1_black_l">
-                    </div>
+                    <h3 class="small-title">ST外部向けサイト開設（2022/05/13）</h3>
+                    <p>現状コンテンツが全くと言っていいほどないが、一応サイト自体の作成を開始し、運び屋のgitにも掲載し始めたということで記録。<br>
+                    STのロゴもとりあえずではあるが作成した（ほんとに適当だけど）   
+                    </p>
                 </div>
             </div>
         </article>
@@ -58,17 +84,20 @@
             </div>
         </aside>
     </main>
+    
     <div class="container clock">
         <div class="clock">
             <p class="clock-date"></p>
             <p class="clock-time"></p>
         </div>
     </div>
+
     <footer>
         <p>&copy; 運び屋, 弱足, リア充</p>
     </footer>
 
-    <script src="js/clock.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/black_clock.js"></script>
 
 </body>
 </html>

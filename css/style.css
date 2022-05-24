@@ -1,56 +1,116 @@
-@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
-
-* {
+body {
     margin: 0;
     padding: 0;
+    font-family: 'ヒラギノ明朝 ProN', 'Hiragino Mincho ProN', 'ヒラギノ明朝 Pro', 'Hiragino Mincho Pro', 'Yu Mincho', '游明朝', verdana, sans-serif;
+    color: #fff;
+    background: #000;
 }
 
-body {
-    background: black;
-    position: relative;
+ul {
+    list-style-type: none;
 }
 
-li {
-    list-style: none;
-}
-
-p {
-    font-weight: 900;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 
 /* ----------header---------- */
 
 
+.header-box {
+    padding: 20px 32px;
+    background: #303030;
+}
+
 header {
-    display: flex;
-    justify-content: space-between;
     height: 50px;
-    /* background: red; */
-    background: #999;
-    margin-bottom: 20px;
-    padding: 10px 30px;
-}
-
-header a {
-    height: 100%;
-}
-
-header img {
-    height: 100%;
-}
-
-header ul {
     display: flex;
+    margin: 0;
+    color: black;
 }
 
-header li {
-    font-size: 20px;
-    margin-top: 10px;
+.st-logo {
+    /* display: block; */
+    height: 100%;
 }
 
-header li + li {
-    margin-left: 20px;
+.sp-menu {
+    margin-left: auto;
+}
+
+.sp-menu #open {
+    font-size: 32px;
+    line-height: 50px;
+    cursor: pointer;
+}
+
+.pc-menu {
+    display: none;
+    font-size: 24px;
+    margin: auto 0;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    color: black;
+    background: rgba(255, 255, 255, .95);
+    text-align: center;
+    padding: 64px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.overlay #close {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.overlay ul {
+    margin: 0;
+    padding: 0;
+}
+
+.overlay li {
+    margin-top: 24px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity .3s, transform .3s;
+}
+
+.show li {
+    opacity: 1;
+    transform: none;
+}
+
+.show li:nth-child(1) {
+    transition-delay: .1s;
+}
+
+.show li:nth-child(2) {
+    transition-delay: .2s;
+}
+
+.show li:nth-child(3) {
+    transition-delay: .3s;
 }
 
 
@@ -58,23 +118,20 @@ header li + li {
 
 
 main {
-    /* background: green; */
     padding: 30px;
-    display: flex;
-    height: 600px;
-    justify-content: space-between;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
 main article {
-    width: 72%;
-    /* background: skyblue; */
     position: relative;
+    min-height: 500px;
     background-image: url(../img/logo/asobi/logo2_white_l.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgba(100, 100, 100, 0.8);
+    background-color: rgba(100, 100, 100, .8);
     background-blend-mode: darken;
+    background-size: contain;
+    margin-bottom: 20px;
 }
 
 .contents {
@@ -83,31 +140,14 @@ main article {
 
 .content-box {
     padding: 10px;
-    display: flex;
-}
-
-.text-box {
-    width: 70%;
-}
-
-.img-box {
-    background: white;
-    width: 30%;
-}
-
-.img-box img {
-    max-width: 100%;
-    max-height: 100%;
 }
 
 main aside {
-    width: 26%;
-    /* background: orange; */
-    background-color: rgba(100, 100, 100, 0.8);
+    background-color: rgba(100, 100, 100, .8);
 }
 
 aside h3 {
-    border-bottom: solid 3px gray;
+    border-bottom: solid 3px #333;
     padding: 5px;
 }
 
@@ -121,69 +161,81 @@ aside li {
 }
 
 
-
-
-
-
-/* ----------black_clock---------- */
-
-.container {
-    width: 100%;
-    height: 20vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.clock {
-    font-family: 'Share Tech Mono', monospace;
-    color: #daf6ff;
-    text-shadow: 0 0 20px #0aafe6;
-    line-height: 1.2;
-    text-align: center;
-}
-
-.clock-date {
-    font-size: 25px;
-}
-
-.clock-time {
-    font-size: 100px;
-}
-
-
-
-
-
-
 /* ----------footer---------- */
 
 
 footer {
-    margin-top: 80px;
+    margin-top: 70px;
     padding: 20px;
-    background: crimson;
+    background: #303030;
 }
 
 footer > p {
-    color: white;
+    color: #fff;
     text-align: center;
 }
 
 
-
-
-
-/* ---------------media query--------------- */
-/* -----large----- */
-
-@media screen and (max-width: 500px) {
-    .clock-date {
-        font-size: 5vw;
+/* ----------medium screen---------- */
+@media (min-width: 600px) {
+    /* ----------header---------- */
+    
+    
+    header {
+        height: 70px;
+    }
+    
+    .sp-menu {
+        display: none;
     }
 
-    .clock-time {
-        font-size: 20vw;
+    .pc-menu {
+        display: block;
+        margin-left: auto;
+    }
+
+    .pc-menu ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .pc-menu a {
+        display: block;
+        width: 100px;
+        line-height: 50px;
+        text-align: center;
+        transition: background .3s, color .3s;
+    }
+
+    .pc-menu a:hover {
+        /* background: rgba(150, 150, 150, .3);
+        color: black; */
+        background: #222;
+        color: #eee;
+    }
+
+
+    /* ----------main---------- */
+
+
+    main {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    main article {
+        margin: 0;
+        width: 72%;
+    }
+
+    main aside {
+        width: 26%;
     }
 }
+
+
+
+
+
+
